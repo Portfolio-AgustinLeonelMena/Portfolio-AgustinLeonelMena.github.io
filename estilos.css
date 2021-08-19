@@ -101,8 +101,6 @@ header .categorias a.activo {
     vertical-align:top;
 }
 
-
-
 .overlay {
     position: fixed;
     top: 0;
@@ -119,11 +117,12 @@ header .categorias a.activo {
 }
 
 .overlay.activo {
-    display: flex;
+    display:flex;
 }
 
 .overlay img {
-    max-width: 100%;
+    max-width: 92%;
+    align-items: flex;
 }
 
 .overlay .descripcion {
@@ -147,10 +146,9 @@ header .categorias a.activo {
     border: none;
     cursor: pointer;
     position: absolute;
-    right: -20px;
-    top: -20px;
+    right: 25px;
+    top: -5px;
 }
-
 
 footer .redes-sociales {
     display: flex;
@@ -216,5 +214,3 @@ header .barra-busqueda {
     width: 100%;
 }
 }
-
-

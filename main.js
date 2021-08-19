@@ -31,29 +31,28 @@ window.addEventListener("load",  () => {
        grid.filter( (item) => item.getElement().dataset.etiquetas.includes(busqueda) );
    });
 
-   //agregamos listener para las imagenes
+   //agregar listener para imagenes
    const overlay = document.getElementById('overlay');
-   document.querySelectorAll('.grid .item img').forEach((elemento) => {
-    elemento.addEventListener('click', () => {
-       const ruta = elemento.getAtributte('src');
+   document.querySelectorAll('.grid .item img').forEach((elemento)  =>  {
+    elemento.addEventListener('click', () => {   
+       const ruta = elemento.getAttribute('src');
        const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
-
+       
            overlay.classList.add('activo');
            document.querySelector('#overlay img').src = ruta;
            document.querySelector('#overlay .descripcion').innerHTML = descripcion;
-        });
+
+       });
     });
 
-    // listener de boton de cerrar
+   // eventlistener del boton de cerrar
+   document.querySelector('#btn-cerrar-popup').addEventListener('click', () => {
+       overlay.classList.remove('activo');
 
-    document.querySelector ('#btn-cerrar-popup').addEventListener('click', () => {
-        overlay.classList.remove('activo');
-    });
+   });
 
-        // listener del overlay
-        overlay.addEventListener('click', (evento) => {
-           evento.target.id === 'overlay' ? overlay.classList.remove('activo') : ''
-
-        });
-    });
-    
+   overlay.addEventListener( 'click', (evento) => {
+      //overlay.classList.remove('activo');
+      evento.target.id === 'overlay' ? overlay.classList.remove('activo') : '';
+   });
+});
